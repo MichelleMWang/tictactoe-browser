@@ -13,19 +13,56 @@ body {
           justify-content: center;
 }
 
-.choose-mark {
-  margin-left: 5rem;
+.second-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid black;
+}
+
+.second-section button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 1rem;
+  width: 100px;
+  font-size: 17px;
+  padding: .3rem;
+  background-color: #b687ec;
+  color: white;
+}
+
+.second-section .choose-mark-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.second-section .choose-mark-section .choose-mark {
+  margin: 2rem;
   margin-bottom: 2rem;
 }
 
-.choose-mark button {
-  margin: 1rem;
-  font-size: 17px;
-  padding: .3rem;
+.second-section .choose-mark-section .choose-mark label {
+  font-size: 20px;
 }
 
-.choose-mark label {
-  font-size: 20px;
+.second-section .choose-mark-section .choose-mark .x-label {
+  color: red;
+}
+
+.second-section .choose-mark-section .choose-mark .o-label {
+  color: blue;
 }
 
 .game {
@@ -44,5 +81,9 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

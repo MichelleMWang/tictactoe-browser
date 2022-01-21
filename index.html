@@ -11,15 +11,31 @@
     <div class='header'>
         <h1 class='heading'>Tic Tac Toe</h1>
     </div> 
-    <div class='choose-mark'> 
-        <h3 class='which-mark'>Which Mark Do You Want?</h3>
-        <input id='x-button' type='radio' name='mark' value='X'>
-        <label for='X'>X</label>
-        <input id='o-button' type='radio' name='mark' value='O'>
-        <label for='O'>O</label>
+    <div class='second-section'>
+        <div class='choose-mark-section'>
+            <div class='choose-mark' id='p1-choose-mark'> 
+                <h3 class='which-mark' id='p1-which-mark'>Player 1 Choose Mark: </h3>
+                <input class='x-button' id='p1-x-button' type='radio' name='mark' value='X'>
+                <label class='x-label' for='X'>X</label>
+                <input class='o-button' id='p1-o-button' type='radio' name='mark' value='O'>
+                <label class='o-label' for='O'>O</label>
+            </div>
+            <div class='choose-mark' id='p1-choose-mark'> 
+                <h3 class='which-mark' id='p2-which-mark'>Player 2 Choose Mark: </h3>
+                <input class='x-button' type='radio' name='mark' value='X'>
+                <label class='x-label' for='X'>X</label>
+                <input class='o-button' type='radio' name='mark' value='O'>
+                <label class='o-label' for='O'>O</label>
+            </div>
+        </div>
         <button class='submit-button'>Choose</button>
     </div>
-    <div class='game'>
+    <div class='scores-section hide'>
+        <h3 class='scores-text'>Player 1 Score: <span id='p1-score'>0</span></h3>
+        <h3 class='scores-text'>Player 2 Score: <span id='p2-score'>0</span></h3>
+
+    </div>
+    <div class='game hide'>
         <div class='gameboard'>
             <button class='board-square'></button>
             <button class='board-square'></button>

@@ -16,16 +16,25 @@ const GameBoard = (() => {
 
 const Player = () => {
     let _mark = ''; 
+    let _score = 0; 
     const chooseMark = () => {
-        if (document.getElementById('x-button').checked) _mark = 'X'; 
-        else _mark = 'O'; 
+        if (document.getElementById('x-button').checked) {
+            _mark = 'X'; 
+            return true; 
+        }
+        else if (document.getElementById('o-button').checked){
+            _mark = 'O'; 
+            return true; 
+        } else return false; 
     }; 
     const getMark = () => _mark; 
+    const getScore = () => _score; 
     const log = () => console.log('hi'); 
     return {
         log,
         chooseMark, 
-        getMark
+        getMark, 
+        getScore
     }; 
 }; 
 
@@ -39,6 +48,27 @@ const GamePlay = (() => {
 })(); 
 
 const DisplayController = (() => {
-    const submitButton = document.querySelector('.submit-button'); 
-    submitButton.addEventListener('click', () => GamePlay.player1.chooseMark()); 
+    const chooseMark = () => {
+        const submitButton = document.querySelector('.submit-button'); 
+        let chooseSection = document.querySelector('.choose-mark'); 
+        
+        button.addEventListener('click', () => {
+            if (GamePlay.player1.chooseMark()){ 
+
+                chooseSection.classList.add('hide');
+            } else {
+                let warning = document.createElement('p')
+                warning.classList.add('warning'); 
+                warning.textContent = 'please select a mark'; 
+                chooseSection.appendChild(warning); 
+            }        
+        }); 
+    }
+    const setScores = () => {
+
+    }
+
+    return {
+        chooseMark
+    }
 })(); 

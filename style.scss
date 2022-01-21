@@ -7,16 +7,36 @@ body{
     display: flex; 
     justify-content: center;
 }
-.choose-mark{
-    margin-left: 5rem; 
-    margin-bottom: 2rem; 
+.second-section{
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
     button{
-        margin: 1rem; 
+        align-self: center; 
+        margin-bottom: 1rem; 
+        width: 100px;   
         font-size: 17px; 
         padding: .3rem; 
+        background-color: rgb(182, 135, 236); 
+        color: white; 
     }
-    label{
-        font-size: 20px; 
+    border: 1px solid black; 
+    .choose-mark-section{
+        display: flex;
+        justify-content: center; 
+        .choose-mark{
+            margin: 2rem; 
+            margin-bottom: 2rem; 
+            label{
+                font-size: 20px;
+            }
+            .x-label{
+                color: red; 
+            } 
+            .o-label{
+                color: blue; 
+            }
+        }
     }
 }
 .game{
@@ -28,4 +48,7 @@ body{
         display: grid; 
         grid-template-columns: 1fr 1fr 1fr;
     }
+}
+.hide{
+    display: none; 
 }
