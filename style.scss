@@ -7,6 +7,18 @@ body{
     display: flex; 
     justify-content: center;
 }
+.choose-mark{
+    margin-left: 5rem; 
+    margin-bottom: 2rem; 
+    button{
+        margin: 1rem; 
+        font-size: 17px; 
+        padding: .3rem; 
+    }
+    label{
+        font-size: 20px; 
+    }
+}
 .game{
     display: flex; 
     justify-content: center;

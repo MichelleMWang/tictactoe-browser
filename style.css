@@ -13,6 +13,21 @@ body {
           justify-content: center;
 }
 
+.choose-mark {
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.choose-mark button {
+  margin: 1rem;
+  font-size: 17px;
+  padding: .3rem;
+}
+
+.choose-mark label {
+  font-size: 20px;
+}
+
 .game {
   display: -webkit-box;
   display: -ms-flexbox;
