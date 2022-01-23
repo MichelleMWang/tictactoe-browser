@@ -4,6 +4,15 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,5 +94,10 @@ body {
 
 .hide {
   display: none;
+}
+
+.warning {
+  color: red;
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

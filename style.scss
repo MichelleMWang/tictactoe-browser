@@ -3,6 +3,15 @@ body{
     padding: 0; 
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
+button {
+
+    &:hover{
+        cursor: pointer; 
+    }
+    &:active {
+        filter: brightness(85%); 
+    }
+}
 .header{
     display: flex; 
     justify-content: center;
@@ -51,4 +60,8 @@ body{
 }
 .hide{
     display: none; 
+}
+.warning{
+    color: red; 
+    position: absolute; 
 }
