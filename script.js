@@ -2,18 +2,27 @@ const GameBoard = (() => {
     let _board = []; 
     
     const getBoard = () => _board; 
+    const getField = (index) => _board[index]; 
     const makeMove = (mark, index) => {
         if (!_board[index]){
             _board[index] = mark; 
             let square = document.getElementById(index);
             square.textContent = mark; 
-            GamePlay.changeTurns(); 
+            if (GamePlay.checkWin()) { //win 
+                console.log(GamePlay.getTurn() + ' won!'); 
+            } else if (GamePlay.getTurns() == 9){ // draw -- no one won but last 
+                console.log('it was a draw!');
+            } else {
+                GamePlay.changeTurns(); 
+            }
         }
     }; 
+
 
     return {
         getBoard, 
         makeMove, 
+        getField
     }; 
 })(); 
 
@@ -22,6 +31,8 @@ const Player = (id) => {
     let _id = id; 
     let _mark = ''; 
     let _score = 0; 
+    let _name = 'player ' + _id; 
+
     const chooseMark = () => {
         if (document.getElementById(`p${_id}-x-button`).checked) {
             _mark = 'X'; 
@@ -34,10 +45,12 @@ const Player = (id) => {
     }; 
     const getMark = () => _mark; 
     const getScore = () => _score; 
+    const getName = () => _name; 
     return {
         chooseMark, 
         getMark, 
-        getScore
+        getScore, 
+        getName
     }; 
 }; 
 
@@ -55,12 +68,47 @@ const GamePlay = (() => {
     const getTurn = () => turn; 
     const getTurns = () => turns; 
 
+    //checking for wins
+    const _checkRows = () => {
+        for (let i = 0; i < 3; i+=3){
+            let row = []; 
+            for (let j = i; j < i + 3; j++){
+                row.push(GameBoard.getField(j)); 
+            }
+            if (row.every(field => field == turn.getMark())) return true; 
+        }
+        return false; 
+    }
+
+    const _checkCols = () => {
+        for (let i = 0; i < 3; i++){
+            let col = []; 
+            for (let j = i; j < i + +3+3; j+=3){
+                col.push(GameBoard.getField(j)); 
+            }
+            if (col.every(field => field == turn.getMark())) return true; 
+        }
+        return false; 
+    }
+
+    const _checkDiag = () => {
+        if (GameBoard.getField(0) == turn.getMark() && GameBoard.getField(4) == turn.getMark() && GameBoard.getField(8) == turn.getMark()) return true; 
+        else if (GameBoard.getField(2) == turn.getMark() && GameBoard.getField(4) == turn.getMark() && GameBoard.getField(6) == turn.getMark()) return true; 
+        else return false; 
+    }
+
+    const checkWin = () => {
+        if (_checkCols() || _checkRows() || _checkDiag()) return true; 
+        else return false; 
+    }
+
     return {
         player1, 
         player2, 
         getTurn, 
         getTurns,
-        changeTurns
+        changeTurns, 
+        checkWin
     }; 
 })(); 
 
